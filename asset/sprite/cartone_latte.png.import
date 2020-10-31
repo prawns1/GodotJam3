@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/persona.png-32fe070138e7f3fc964148bcac1680d5.stex"
+path="res://.import/cartone_latte.png-da0d9fe982661672c2b8336bdda35ccb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprite/persona.png"
-dest_files=[ "res://.import/persona.png-32fe070138e7f3fc964148bcac1680d5.stex" ]
+source_file="res://asset/sprite/cartone_latte.png"
+dest_files=[ "res://.import/cartone_latte.png-da0d9fe982661672c2b8336bdda35ccb.stex" ]
 
 [params]
 

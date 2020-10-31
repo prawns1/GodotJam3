@@ -9,13 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Bidone",
+"language": "GDScript",
+"path": "res://Bidone.gd"
+}, {
 "base": "Node2D",
 "class": "Persona",
 "language": "GDScript",
 "path": "res://src/Persona.gd"
+}, {
+"base": "Area2D",
+"class": "Rifiuto",
+"language": "GDScript",
+"path": "res://Rifiuto.gd"
 } ]
 _global_script_class_icons={
-"Persona": ""
+"Bidone": "",
+"Persona": "",
+"Rifiuto": ""
 }
 
 [application]

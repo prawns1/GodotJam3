@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/persona.png-32fe070138e7f3fc964148bcac1680d5.stex"
+path="res://.import/bottiglia.png-1b617218f34bd89c3940b3c99f3652ff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprite/persona.png"
-dest_files=[ "res://.import/persona.png-32fe070138e7f3fc964148bcac1680d5.stex" ]
+source_file="res://asset/sprite/bottiglia.png"
+dest_files=[ "res://.import/bottiglia.png-1b617218f34bd89c3940b3c99f3652ff.stex" ]
 
 [params]
 
