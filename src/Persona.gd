@@ -3,7 +3,7 @@ extends Node2D
 class_name Persona
 signal spawn(position)
 
-export (int) var speed = 3;
+export (int) var speed = 2; # ridotto per compensare animazione
 export (int) var fallSpeed = 10;
 
 var rng = RandomNumberGenerator.new()
@@ -41,6 +41,7 @@ func initSpawn():
 	var spawnHeight = heightSpawnBound[rng.randi()%2]
 	workIndex = rng.randi() % 2
 	#larghezza scelta in corrispondenza al workIndex settato
+	$Sprite.flip_h = workIndex == 1
 	var spawnWidth = widthSpawnBound[workIndex]
 	($".").set_position(Vector2(spawnWidth,spawnHeight) )
 
