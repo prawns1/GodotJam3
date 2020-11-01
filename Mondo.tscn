@@ -32,6 +32,7 @@ __meta__ = {
 
 [node name="Bidone" parent="." instance=ExtResource( 2 )]
 position = Vector2( 352, 488 )
+active = true
 
 [node name="Bidone2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 440, 488 )

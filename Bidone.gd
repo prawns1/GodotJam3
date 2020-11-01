@@ -12,7 +12,7 @@ var textures := {
 	'yellow':"res://asset/sprite/bidone_giallo.png"
 }
 
-var active = false
+export var active = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -44,6 +44,11 @@ func set_type(value) -> void:
 	$Sprite.texture = load(textures[text_name])
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass
+func _physics_process(_delta):
+	if active==true:
+		var velocity=Vector2()
+		if Input.is_key_pressed(KEY_RIGHT):
+			velocity.x=+100
+		if Input.is_key_pressed(KEY_LEFT):
+				 velocity.x=-100
+		move_and_slide(velocity)
