@@ -1,16 +1,23 @@
 extends Control
 
+onready var timer = get_node("Timer")
 
-# Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = "text"
+#in base al punteggio attuale, diminuisce il tempo di spawn
+#vedi spawnTime(score)
+var score = 2
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	timer.set_wait_time(spawnTime(score))
+	
+func _process(delta: float) -> void:
+	timer.set_wait_time(spawnTime(score))
 
+func _on_Timer_timeout():
+	#una persona viene spawnate
+	var personaScene = load("res://Persona.tscn")
+	var personaInstance = personaScene.instance()
+	get_node("Persone").add_child(personaInstance)
+	#Persona.gd -> read() -> initSpawn() parte automaticamente
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass
+func spawnTime(score) -> float:
+	return 3+(4/(score+1))

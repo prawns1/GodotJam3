@@ -44,3 +44,9 @@ type = 0
 [node name="Bidone4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 608, 488 )
 type = 3
+
+[node name="Persone" type="Node" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

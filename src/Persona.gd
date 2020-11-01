@@ -8,7 +8,7 @@ export (int) var fallSpeed = 10;
 var rng = RandomNumberGenerator.new()
 
 var spawnPoint = Vector2()
-var heightSpawnBound = [30, 60] #altezza minima e massima di spawn
+var heightSpawnBound = [30, 130] #altezza minima e massima di spawn
 
 #questi lavorano insieme, in base al "workIndex" settato in initSpawn()
 var workIndex
