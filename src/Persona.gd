@@ -3,7 +3,7 @@ extends Node2D
 class_name Persona
 signal spawn(position)
 
-export (int) var speed = 2; # ridotto per compensare animazione
+export (int) var speed = 150; # ridotto per compensare animazione
 export (int) var fallSpeed = 10;
 
 var rng = RandomNumberGenerator.new()
@@ -33,7 +33,7 @@ func _ready():
 	print(trashSpawnPosition)
 	
 func _process(delta):
-	setNewPosition() #nuova posizione, controllo di esistenza, di spawn rifiuto
+	setNewPosition(delta) #nuova posizione, controllo di esistenza, di spawn rifiuto
 
 func initSpawn():
 	rng.randomize()
@@ -45,9 +45,9 @@ func initSpawn():
 	var spawnWidth = widthSpawnBound[workIndex]
 	($".").set_position(Vector2(spawnWidth,spawnHeight) )
 
-func setNewPosition():
+func setNewPosition(delta):
 	var exPos = get_position()
-	exPos.x += speed * direction[workIndex]
+	exPos.x += delta * speed * direction[workIndex]
 	#se provenivo da sinistra e ho raggiunto la fine a destra,
 	#oppure se provenivo da destra e ho raggiunto la fine a sinistra- muoro
 	if( (workIndex==0 && exPos.x >= destroyAtPosition[workIndex]) ||

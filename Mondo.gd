@@ -8,7 +8,7 @@ var score = 2
 
 func _ready() -> void:
 	timer.set_wait_time(spawnTime(score))
-	
+
 func _process(delta: float) -> void:
 	timer.set_wait_time(spawnTime(score))
 
@@ -23,4 +23,7 @@ func spawnTime(score) -> float:
 	return 3+(4/(score+1))
 
 func _on_trash_throw(trashPosition):
-	print(trashPosition)
+	var rifiutoScene = load("res://Rifiuto.tscn")
+	var rifiutoInstance = rifiutoScene.instance()
+	rifiutoInstance.initialize(trashPosition)
+	get_node("Rifiuti").add_child(rifiutoInstance);

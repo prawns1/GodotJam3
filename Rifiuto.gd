@@ -12,14 +12,21 @@ var textures := {
 	'juice': "res://asset/sprite/succo.png"
 }
 
+export (int) var speed = 250
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
+
+func _process(delta):
+	move(delta)
 
 func initialize(position: Vector2) -> void:
 	#prendi la posizione di partenza, eventualmente aggiungere il tipo
 	#per il tipo usare un valore intero 0 = mela etc...
 	#perché da un altro script ha problemi a leggere gli enum
+	self.position = position
+	set_type(randi()%textures.size())
 	pass
 
 func set_type(value) -> void:
@@ -35,3 +42,8 @@ func set_type(value) -> void:
 		TRASH_TYPE.JUICE:
 			text_name = 'juice'
 	$Sprite.texture = load(textures[text_name])
+
+func move(delta):
+	var exPos = get_position()
+	exPos.y += (delta * speed)
+	set_position(Vector2(exPos.x, exPos.y))
